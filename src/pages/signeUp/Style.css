@@ -1,0 +1,193 @@
+
+
+@media screen and (max-width: 767px){
+    main {
+        background: url(./../../assets/images/Sign\ up.jpg);
+        background-position: center;
+        background-size: cover ;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }  
+    /* LA permier section */
+     .left-section{
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+     }
+     .join-us{
+        font-size: 1.4rem;
+        color: #D4F2F4;
+     }
+
+     
+     /*la 2eme section */ 
+     .right-section{
+        border-radius: 25px 25px 0px 0px;
+        padding: 20px;
+        align-items: center;
+        align-self: stretch;
+        padding-top: 30px;
+        background: #D4F2F4;
+        flex-grow: 4;
+     }
+     .right-section h1{
+        font-size: 1.8rem;
+        color: #04445F;
+        
+    }
+    .grid-container {
+        margin: 0px 15px;
+        margin-top: 8%;
+        display: grid; 
+        grid-template-columns: repeat(1, 1fr); /* Three equal-width columns */
+        grid-gap: 8% ; 
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 110px;
+
+    }
+    .grid {
+        text-align: center;
+    }
+   
+    .item6 button {
+        width: 50%;
+        padding: 13px 10px;
+        margin-bottom: 50px;
+        background-color: #04445F; /* Couleur de fond du bouton */
+        color: white; /* Couleur du texte du bouton */
+        border: 10px; 
+        border-radius: 5px; /* Ajouter des coins arrondis */
+        font-size: 16px; /* Taille de la police */
+        cursor: pointer; /* Ajouter un pointeur au survol du bouton */
+        transition: background-color 0.3s ease; /* Ajouter une transition sur la couleur de fond */
+    }
+    
+    .item6 button:hover {
+        background-color: #189AB4; /* Changement de couleur de fond au survol */
+    }
+    .question{
+        width: 100%;
+        display: absolute;
+        text-align: center;
+    }
+    .question p{
+        color: #189AB4;
+        font-size: 1.5rem;
+    }
+    .question p a{
+      color: #04445F;
+    }
+    
+}
+@media screen and (min-width: 768px){
+    main {
+        background: url(./../../assets/images/Sign\ up.jpg);
+        background-position: center;
+        background-size: cover ;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+    }
+    .left-section{
+        padding: 15px;
+        flex-grow: 1.5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    
+    }
+    .right-section{
+        border-radius: 25px 0px 0px 25px;
+        padding: 40px;
+        padding-top: 60px;
+        background: #D4F2F4;
+        flex-grow: 3;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .right-section h1{
+        font-size: 3rem;
+        color: #04445F;
+        
+    }
+    .join-us{
+       flex: 1;
+       display: flex;
+       align-items: center;
+    }
+    .join-us p{
+        font-size: 2rem;
+        color: white;
+    }
+    .grid-container {
+        margin-top: 8%;
+        display: grid; 
+        margin-bottom: 100px;
+        grid-template-columns: repeat(2, 1fr); /* Three equal-width columns */
+        grid-gap: 15% 4%;
+        justify-content: center;
+        align-items: center;
+    }
+    .grid {
+        
+        
+        text-align: center;
+        
+    }
+     .item1{
+         
+     }
+      .item2{
+      
+      }
+    .item3{
+        grid-row-start: 2;
+        grid-column: span 2;
+      
+    }
+    .item4{
+          grid-row-start: 3;
+    }
+     .item5{
+        grid-row-start: 3;
+     
+     }
+     .item6{
+            /* Ajoutez ces propriétés pour centrer le bouton */
+          grid-column: span 2;
+            text-align: center;     
+     }
+     .item6 button {
+        width: 25%;
+        padding: 13px 10px;
+        background-color: #04445F; /* Couleur de fond du bouton */
+        color: white; /* Couleur du texte du bouton */
+        border: 10px; 
+        border-radius: 5px; /* Ajouter des coins arrondis */
+        font-size: 16px; /* Taille de la police */
+        cursor: pointer; /* Ajouter un pointeur au survol du bouton */
+        transition: background-color 0.3s ease; /* Ajouter une transition sur la couleur de fond */
+    }
+    
+    .item6 button:hover {
+        background-color: #189AB4; /* Changement de couleur de fond au survol */
+    }
+    .question{
+        width: 100%;
+        margin-top: 30px;
+        text-align: center;
+    }
+    .question p{
+        color: #189AB4;
+        font-size: 1.5rem;
+    }
+    .question p a{
+      color: #04445F;
+    }
+}

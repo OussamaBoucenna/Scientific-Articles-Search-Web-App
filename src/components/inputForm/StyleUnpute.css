@@ -1,0 +1,42 @@
+:root {
+    --blueBlack  : "#04445F" ;
+    --blueWhite   : "#D4F2F4" 
+  }
+.container{
+    padding: 10px 15px;
+    height: 50px;
+    border-radius: 15px;
+    border-color: #04445F;
+    border-width: 2px;
+    border-style: solid;
+    background: #D4F2F4 ;
+    display: flex;
+    
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+}
+.container label{
+    padding: 0px 5px;
+    color: #04445F;
+    position: absolute;
+    top: -13px;
+    left: 30px;
+    background: #D4F2F4;
+}
+.container input{
+    background: #D4F2F4;
+    border-width: 0;
+    flex-grow: 20;
+    height: 30px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: #04445F;
+    font-size: large;
+}
+.ico{
+    color: #04445F;
+    scale: 1.7;
+    flex-grow: 1;
+}

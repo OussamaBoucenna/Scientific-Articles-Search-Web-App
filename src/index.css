@@ -1,0 +1,57 @@
+*,body,html{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+@font-face {
+  font-family: lexen-bold;
+  src: url(./../public/fonts/LexendDeca-Bold.ttf);
+}
+.lexen-bold{
+  font-family: lexen-bold;
+}
+@font-face {
+  font-family: lexen-black;
+  src: url(./../public/fonts/LexendDeca-Black.ttf);
+}
+.lexen-black{
+  font-family: lexen-black;
+}
+
+@font-face {
+  font-family: lexen-extrabold;
+  src: url(./../public/fonts/LexendDeca-ExtraBold.ttf);
+}
+.lexen-extrabold{
+  font-family: lexen-extrabold;
+}
+
+@font-face {
+  font-family: lexen-medium;
+  src: url(./../public/fonts/LexendDeca-Medium.ttf);
+}
+.lexend-medium{
+  font-family: lexen-medium;
+}
+
+@font-face {
+  font-family: lexen-regular;
+  src: url(./../public/fonts/LexendDeca-Regular.ttf);
+}
+.lexend-regular{
+  font-family: lexen-regular;
+}
+
