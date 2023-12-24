@@ -1,6 +1,6 @@
  @media screen and (min-width :769px) {
 
-  main {
+  .main-in {
     background: url(./../../assets/images/Sign\ up.jpg);
     background-position: center;
     background-size: cover ;
@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: row;
 }
-.left-section{
+.left-section-in{
     padding: 15px;
     flex-grow: 1.5;
     display: flex;
@@ -18,16 +18,16 @@
     align-self: stretch;
     position: relative;
 
-} .join-us{
+} .join-us-in{
   flex: 1;
   display: flex;
   align-items: center;
 }
-.join-us p{
+.join-us-in p{
    font-size: 2rem;
    color: white;
 }
-.right-section{
+.right-section-in{
     border-radius: 25px 0px 0px 25px;
     background: #D4F2F4;
     flex-grow: 3;
@@ -39,14 +39,14 @@
     
     
 }
-.right-section h1{
+.right-section-in h1{
     margin-left: 17%;
     margin-top: 10%;
     font-size: 3rem;
     color: #04445F;
 }
   
-.grid-container {
+.grid-container-in {
   margin-left: 17%;
   margin-right: 17%;
   margin-top: 5%;
@@ -58,34 +58,34 @@
   justify-content: center;
   
 }  
-  .grid{ 
+  .grid-in{ 
     width: 100%;
     max-width: 400px;
     
   }
-  .item1{
+  .item1-in{
     grid-row-start: 3;
   }
-  .item2{
+  .item2-in{
       grid-row-start: 4;
   }
-  .item3{
+  .item3-in{
     position: relative;
     grid-row-start: 5;
    
    
   }
-  .item3 a{
+  .item3-in a{
     color: #04445F;
     position: absolute;
     top: -20px;
     right: 0px;
   }
-  .item4{
+  .item4-in{
     grid-row-start: 6 ; 
     text-align: center;
   }
-  .item4 button {
+  .item4-in button {
     width: 40%;
     padding: 8px 10px;
     background-color: #04445F; /* Couleur de fond du bouton */
@@ -97,18 +97,18 @@
     transition: background-color 0.3s ease; /* Ajouter une transition sur la couleur de fond */
 }
 
-.item4 button:hover {
+.item4-in button:hover {
     background-color: #189AB4; /* Changement de couleur de fond au survol */
 }
-  .question{
+  .question-in{
     grid-row-start: 7 ; 
     text-align: center;
   }
-  .question p{
+  .question-in p{
     color: #189AB4;
     font-size: 1.3rem;
 }
-.question p a{
+.question-in p a{
   color: #04445F;
 }
  }
@@ -116,7 +116,7 @@
 
  /* Design pour Mobile */
  @media screen and (max-width : 768px) {
-  main {
+  .main-in {
     background: url(./../../assets/images/Sign\ up.jpg);
     background-position: center;
     background-size: cover ;
@@ -125,18 +125,18 @@
     flex-direction: column;
 }  
 /* LA permier section */
- .left-section{
+ .left-section-in{
     padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     align-self: stretch;
  }
- .join-us{
+ .join-us-in p{
     font-size: 1.4rem;
-    color: #D4F2F4;
+    color: white;
  }
- .right-section{
+ .right-section-in{
   border-radius: 25px 25px 0px 0px;
   align-items: center;
   justify-content: center;
@@ -145,14 +145,14 @@
   min-width: 100%;
   flex-grow: 4;
 }  
-.right-section h1{
+.right-section-in h1{
   font-size: 1.8rem;
   color: #04445F;
   margin-left: 17%;
   margin-top: 10%;
   
 }  
-.grid-container {
+.grid-container-in {
   margin: 0 20%;
   margin-top: 5%;
   display: grid; 
@@ -163,34 +163,34 @@
   justify-content: center;
   
 }  
-.grid{ 
+.grid-in{ 
   width: 100%;
   max-width: 400px;
   
 }
-.item1{
+.item1-in{
   grid-row-start: 3;
 }
-.item2{
+.item2-in{
     grid-row-start: 4;
 }
-.item3{
+.item3-in{
   position: relative;
   grid-row-start: 5;
   
  
 }
-.item3 a{
+.item3-in a{
   color: #04445F;
   position: absolute;
   top: -20px;
   right: 0px;
 }
-.item4{
+.item4-in{
   grid-row-start: 6 ; 
   text-align: center;
 }
-.item4 button {
+.item4-in button {
   width: 40%;
   padding: 8px 10px;
   background-color: #04445F; /* Couleur de fond du bouton */
@@ -202,18 +202,18 @@
   transition: background-color 0.3s ease; /* Ajouter une transition sur la couleur de fond */
 }
 
-.item4 button:hover {
+.item4-in button:hover {
   background-color: #189AB4; /* Changement de couleur de fond au survol */
 }
-.question{
+.question-in{
   grid-row-start: 7 ; 
   text-align: center;
 }
-.question p{
+.question-in p{
   color: #189AB4;
   font-size: 1.3rem;
 }
-.question p a{
+.question-in p a{
 color: #04445F;
 }
 

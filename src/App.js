@@ -1,11 +1,15 @@
 import './App.css';
-import SignIn from './pages/signeIn' ; 
-import ForgetPassword from './pages/forgotPassword'
-import NewPassword from './pages/newPasword';
+import SignIn from './pages/signeIn/index.jsx' ; 
+import ForgetPassword from './pages/forgotPassword/index.jsx'
+import NewPassword from './pages/newPasword/index.jsx';
+import SignUp from './pages/signeUp/index.jsx';
 function App() {
   return (
     <div className="App">
-      <NewPassword/>     
+      <SignUp/>
+      {/* <SignIn/>      */}
+      {/* <ForgetPassword/> */}
+      {/* <NewPassword/> */}
     </div>
   );
 }

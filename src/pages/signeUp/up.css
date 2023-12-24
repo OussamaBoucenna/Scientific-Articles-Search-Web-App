@@ -1,7 +1,7 @@
 
 
 @media screen and (max-width: 767px){
-    main {
+    .main-up {
         background: url(./../../assets/images/Sign\ up.jpg);
         background-position: center;
         background-size: cover ;
@@ -10,21 +10,21 @@
         flex-direction: column;
     }  
     /* LA permier section */
-     .left-section{
+     .left-section-up{
         padding: 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
         align-self: stretch;
      }
-     .join-us{
+     .join-us-up p{
         font-size: 1.4rem;
-        color: #D4F2F4;
+        color: white;
      }
 
      
      /*la 2eme section */ 
-     .right-section{
+     .right-section-up{
         border-radius: 25px 25px 0px 0px;
         padding: 20px;
         align-items: center;
@@ -33,12 +33,12 @@
         background: #D4F2F4;
         flex-grow: 4;
      }
-     .right-section h1{
+     .right-section-up h1{
         font-size: 1.8rem;
         color: #04445F;
         
     }
-    .grid-container {
+    .grid-container-up {
         margin: 0px 15px;
         margin-top: 8%;
         display: grid; 
@@ -49,11 +49,11 @@
         margin-bottom: 110px;
 
     }
-    .grid {
+    .grid-up {
         text-align: center;
     }
    
-    .item6 button {
+    .item6-up button {
         width: 50%;
         padding: 13px 10px;
         margin-bottom: 50px;
@@ -66,25 +66,25 @@
         transition: background-color 0.3s ease; /* Ajouter une transition sur la couleur de fond */
     }
     
-    .item6 button:hover {
+    .item6-up button:hover {
         background-color: #189AB4; /* Changement de couleur de fond au survol */
     }
-    .question{
+    .question-up{
         width: 100%;
         display: absolute;
         text-align: center;
     }
-    .question p{
+    .question-up p{
         color: #189AB4;
         font-size: 1.5rem;
     }
-    .question p a{
+    .question-up p a{
       color: #04445F;
     }
     
 }
 @media screen and (min-width: 768px){
-    main {
+    .main-up {
         background: url(./../../assets/images/Sign\ up.jpg);
         background-position: center;
         background-size: cover ;
@@ -92,7 +92,7 @@
         display: flex;
         flex-direction: row;
     }
-    .left-section{
+    .left-section-up{
         padding: 15px;
         flex-grow: 1.5;
         display: flex;
@@ -101,7 +101,7 @@
         position: relative;
     
     }
-    .right-section{
+    .right-section-up{
         border-radius: 25px 0px 0px 25px;
         padding: 40px;
         padding-top: 60px;
@@ -111,21 +111,21 @@
         flex-direction: column;
         
     }
-    .right-section h1{
+    .right-section-up h1{
         font-size: 3rem;
         color: #04445F;
         
     }
-    .join-us{
+    .join-us-up{
        flex: 1;
        display: flex;
        align-items: center;
     }
-    .join-us p{
+    .join-us-up p{
         font-size: 2rem;
         color: white;
     }
-    .grid-container {
+    .grid-container-up {
         margin-top: 8%;
         display: grid; 
         margin-bottom: 100px;
@@ -134,36 +134,31 @@
         justify-content: center;
         align-items: center;
     }
-    .grid {
+    .grid-up {
         
         
         text-align: center;
         
     }
-     .item1{
-         
-     }
-      .item2{
-      
-      }
-    .item3{
+    
+    .item3-up{
         grid-row-start: 2;
         grid-column: span 2;
       
     }
-    .item4{
+    .item4-up{
           grid-row-start: 3;
     }
-     .item5{
+     .item5-up{
         grid-row-start: 3;
      
      }
-     .item6{
+     .item6-up{
             /* Ajoutez ces propriétés pour centrer le bouton */
           grid-column: span 2;
             text-align: center;     
      }
-     .item6 button {
+     .item6-up button {
         width: 25%;
         padding: 13px 10px;
         background-color: #04445F; /* Couleur de fond du bouton */
@@ -175,19 +170,19 @@
         transition: background-color 0.3s ease; /* Ajouter une transition sur la couleur de fond */
     }
     
-    .item6 button:hover {
+    .item6-up button:hover {
         background-color: #189AB4; /* Changement de couleur de fond au survol */
     }
-    .question{
+    .question-up{
         width: 100%;
         margin-top: 30px;
         text-align: center;
     }
-    .question p{
+    .question-up p{
         color: #189AB4;
         font-size: 1.5rem;
     }
-    .question p a{
+    .question-up p a{
       color: #04445F;
     }
 }

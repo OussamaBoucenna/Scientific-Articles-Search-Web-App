@@ -1,4 +1,4 @@
-import './Style.css'
+import './up.css'
 import FormInput from './../../components/inputForm'
 import { useState } from 'react';
 const SignUp = () => {
@@ -25,31 +25,31 @@ const SignUp = () => {
     setConfirmedPassword(newConfirmedPassword); 
    }
   return (
-    <main>
-      <section className='left-section'>
+    <main className='main-up'>
+      <section className='left-section-up'>
             <div>
                 logo
             </div>
-            <div className='join-us'>
+            <div className='join-us-up'>
                 <p className='lexen-bold'>Join us now !</p>
             </div>
       </section>
-      <section className='right-section'>
+      <section className='right-section-up'>
          <h1 className='lexen-bold'>Sign Up</h1>
-         <form className='grid-container'>
-             <div className='grid item1'><FormInput type="text" label="First name" icon= {null} onChange={onFirstNameChange} /></div>
-              <div className='grid item2'><FormInput type="text" label="Last name" icon={null} onChange={onLastNameChange}/></div>
-              <div className='grid item3'><FormInput type="email" label="E-mail" icon="email" onChange={onEmailChange}/></div>
-              <div className='grid item4'><FormInput type="password" label="Password" icon="password" onChange={onPasswordChange}/></div>
-              <div className='grid item5'><FormInput type="password" label="Confirme password" icon="password" onChange={onConfirmedPasswordChange}/></div> 
+         <form className='grid-container-up'>
+             <div className='grid-up item1-up'><FormInput type="text" label="First name" icon= {null} onChange={onFirstNameChange} /></div>
+              <div className='grid-up item2-up'><FormInput type="text" label="Last name" icon={null} onChange={onLastNameChange}/></div>
+              <div className='grid-up item3-up'><FormInput type="email" label="E-mail" icon="email" onChange={onEmailChange}/></div>
+              <div className='grid-up item4-up'><FormInput type="password" label="Password" icon="password" onChange={onPasswordChange}/></div>
+              <div className='grid-up item5-up'><FormInput type="password" label="Confirme password" icon="password" onChange={onConfirmedPasswordChange}/></div> 
             
-            <div className='grid item6'>
+            <div className='grid-up item6-up'>
                 <button>
                     Sign Up
                 </button>
             </div>
          </form>
-         <div className='question'>
+         <div className='question-up'>
             <p className='lexen-medium'>
             You already have an account ? <a className='lexen-bold' href='#'>Sign in</a>
             </p>
