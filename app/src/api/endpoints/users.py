@@ -53,7 +53,8 @@ def update_user_me(
     *,
     db: Session = Depends(deps.get_db),
     password: str = Body(None),
-    full_name: str = Body(None),
+    first_name: str = Body(None),
+    last_name: str = Body(None),
     email: EmailStr = Body(None),
     current_user: models.User = Depends(deps.get_current_active_user),
 ) -> Any:
@@ -64,8 +65,10 @@ def update_user_me(
     user_in = schemas.UserUpdate(**current_user_data)
     if password is not None:
         user_in.password = password
-    if full_name is not None:
-        user_in.full_name = full_name
+    if first_name is not None:
+        user_in.first_name = first_name
+    if last_name is not None:
+        user_in.last_name = last_name
     if email is not None:
         user_in.email = email
     user = crud_user.user.update(db, db_obj=current_user, obj_in=user_in)
@@ -89,7 +92,8 @@ def create_user_open(
     db: Session = Depends(deps.get_db),
     password: str = Body(...),
     email: EmailStr = Body(...),
-    full_name: str = Body(None),
+    first_name: str = Body(None),
+    last_name: str = Body(None),
 ) -> Any:
     """
     Create new user without the need to be logged in.
@@ -105,7 +109,7 @@ def create_user_open(
             status_code=400,
             detail="The user with this username already exists in the system",
         )
-    user_in = schemas.UserCreate(password=password, email=email, full_name=full_name)
+    user_in = schemas.UserCreate(password=password, email=email, first_name=first_name,last_name=last_name)
     user = crud_user.user.create(db, obj_in=user_in)
     return user
 

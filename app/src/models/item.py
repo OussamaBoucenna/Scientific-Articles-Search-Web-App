@@ -1,6 +1,6 @@
 from typing import TYPE_CHECKING
 
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer, String,Date,ARRAY,Boolean
 from sqlalchemy.orm import relationship
 
 from src.db.base_class import Base
@@ -14,4 +14,14 @@ class Item(Base):
     title = Column(String, index=True)
     description = Column(String, index=True)
     owner_id = Column(Integer, ForeignKey("user.id"))
-    owner = relationship("User", back_populates="items")
+    checked = Column(Boolean(),default=False)
+    authors = Column(ARRAY(String))
+    mot_cle = Column(ARRAY(String))
+    url = Column(String, index=True)
+    nombre_favoris = Column(Integer, index=True)
+    reference = Column(ARRAY(String))
+    date_publication = Column(Date)
+    owner = relationship("User", back_populates="items")    
+
+    
+    

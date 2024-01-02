@@ -5,7 +5,7 @@ from sqlalchemy.orm import relationship
 
 from src.db.base_class import Base
 
-class User(Base):
+class Mod(Base):
     id = Column(Integer, primary_key=True, index=True)
     email = Column(String, unique=True, index=True, nullable=False)
     hashed_password = Column(String, nullable=False)
@@ -13,7 +13,5 @@ class User(Base):
     is_superuser = Column(Boolean(), default=False)
     first_name = Column(String, index=True)
     last_name = Column(String, index=True)
-    items = relationship("Item", back_populates="owner")
-
 
 

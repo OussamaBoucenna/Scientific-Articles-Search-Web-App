@@ -1,4 +1,4 @@
-from src.api.endpoints import login, users, items
+from src.api.endpoints import login, users, items,mods
 from fastapi import FastAPI, APIRouter
 from starlette.middleware.cors import CORSMiddleware
 from src.core.config import settings
@@ -25,3 +25,4 @@ api_router.include_router(root_router,  tags=["root"])
 api_router.include_router(login.router, prefix='/login', tags=["login"])
 api_router.include_router(users.router, prefix="/users", tags=["users"])
 api_router.include_router(items.router, prefix="/items", tags=["items"])
+api_router.include_router(mods.router, prefix="/mods", tags=["mods"])

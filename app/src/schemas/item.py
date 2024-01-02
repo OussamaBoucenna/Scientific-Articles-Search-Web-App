@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional,List
 
 from pydantic import BaseModel
 
@@ -12,6 +12,13 @@ class ItemBase(BaseModel):
 # Properties to receive on item creation
 class ItemCreate(ItemBase):
     title: str
+    checked: bool
+    url: str
+    description: str
+    authors: List[str]
+    references: List[int]
+    keywords: List[str]
+    
 
 
 # Properties to receive on item update
@@ -26,7 +33,7 @@ class ItemInDBBase(ItemBase):
     owner_id: int
 
     class Config:
-        from_attributes = True
+        on_orm = True
 
 
 # Properties to return to client
