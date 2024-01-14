@@ -1,15 +1,42 @@
 import Navbar from "../../../components/NavBar/Navbar";
 import FormInput from "./../../../components/inputFormRespo/index";
 import { useState } from "react";
+import axios from "axios";
 const AddModPage = () => {
     const [firstName,setFirstName] = useState("");
     const [lastName,setLastName] = useState(""); 
     const [email,setEmail] = useState(""); 
     const [password,setPassword] = useState(""); 
 
-    const handleAddClick = () =>{
+    const handleAddClick = async () =>{
         // hedi li n'etulisiwha ki n'integriw
         // lazem tani ndir retour ki ndero add 
+        try {
+          const response = await axios.post(
+            "https://localhost:8080/", // Remplacez par l'URL de votre backend
+            {
+              firstName: firstName,
+              lastName: lastName,
+              email: email,
+              password: password,
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+                // 'Authorization' : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDU5MjI2MDQsInN1YiI6IjEifQ.flvl43W7JAvIgK7ixk23a87KpQlYdPd2i8K5eZuFH3Q' , 
+               //   'My-Custom-Header' : 'foobar'
+                 // Ajoutez d'autres en-têtes si nécessaire
+              },
+            }
+          );
+    
+          console.log("Réponse du serveur :", response.data);
+          // Ajoutez ici le code pour traiter la réponse si nécessaire
+    
+        } catch (error) {
+          console.error("Erreur lors de la requête POST :", error);
+          // Ajoutez ici le code pour gérer les erreurs si nécessaire
+        }
     }
 
     const onFirstNameChange = (newFirstName) => {
