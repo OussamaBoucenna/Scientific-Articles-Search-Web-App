@@ -151,3 +151,15 @@ def update_user(
         )
     user = crud_user.user.update(db, db_obj=user, obj_in=user_in)
     return user
+@router.delete("/{id}", response_model=schemas.User)
+def delete_user(
+    *,
+    db: Session = Depends(deps.get_db),
+    id: int,
+    current_user: models.User = Depends(deps.get_current_active_user),
+) -> Any:
+    """
+    Delete a user.
+    """
+    user = crud_user.user.remove(db=db, id=id)
+    return user
