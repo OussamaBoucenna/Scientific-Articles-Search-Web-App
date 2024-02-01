@@ -7,6 +7,7 @@ import DeletePage from './pages/admin/DeleteMod/DeletePage';
 import ModeratorListDelete from './pages/admin/DeleteMod/ModeratorListDelete';
 import AddModPage from './pages/admin/AddMod/AddMod';
 import UploadPage from './pages/admin/Upload/UploadPage';
+import SignIn from './pages/signeIn';
 
 function App() {
   return (
@@ -15,13 +16,14 @@ function App() {
      {/* <AdminPage/> */}
       <Router>
       <Routes>
-         <Route path="/" element={<AdminPage />} />
+          <Route path="/" element ={<SignIn/>} />
+         <Route path="/admin" element={<AdminPage />} />
          {/* Ajoutez d'autres routes ici */}
-         <Route path="/ListEdit" element={<EditListPage/>}/>
-         <Route path="/EditModPage/:id" element={<EditModPage/>}/>
-         <Route path="/DeletePage" element={<DeletePage/>}/>
-         <Route path="/ListDelete" element={<ModeratorListDelete/>}/>
-         <Route path="/AddMod" element={<AddModPage/>}/>
+         <Route path="/admin/ListEdit" element={<EditListPage/>}/>
+         <Route path="/admin/EditModPage/:id" element={<EditModPage/>}/>
+         <Route path="/admin/DeletePage" element={<DeletePage/>}/>
+         <Route path="/admin/ListDelete" element={<ModeratorListDelete/>}/>
+         <Route path="/admin/AddMod" element={<AddModPage/>}/>
          <Route path="/Upload" element={<UploadPage/>}/>
 
 

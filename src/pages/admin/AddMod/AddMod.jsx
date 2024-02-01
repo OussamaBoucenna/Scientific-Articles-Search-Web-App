@@ -1,15 +1,39 @@
 import Navbar from "../../../components/NavBar/Navbar";
 import FormInput from "./../../../components/inputFormRespo/index";
 import { useState } from "react";
+import axios from 'axios';
 const AddModPage = () => {
     const [firstName,setFirstName] = useState("");
     const [lastName,setLastName] = useState(""); 
     const [email,setEmail] = useState(""); 
     const [password,setPassword] = useState(""); 
 
-    const handleAddClick = () =>{
+    const handleAddClick = async (event) =>{
+      
         // hedi li n'etulisiwha ki n'integriw
         // lazem tani ndir retour ki ndero add 
+        event.preventDefault();
+
+    try {
+      const myKey = localStorage.getItem('token');
+      console.log("the acces token is :",myKey); 
+      const response = await axios.post(
+        'http://localhost:8080/mods/',
+        {
+          password: password,
+          email: email,
+          first_name: firstName,
+          last_name: lastName,
+        },{
+        headers: {
+          Authorization: `Bearer ${myKey}`, // Set the Authorization header
+        },}
+      );
+
+      console.log('User created successfully:', response.data);
+    } catch (error) {
+      console.error('Error creating user:', error);
+    }
     }
 
     const onFirstNameChange = (newFirstName) => {

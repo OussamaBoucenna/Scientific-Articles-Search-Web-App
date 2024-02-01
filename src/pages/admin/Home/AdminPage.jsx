@@ -10,14 +10,14 @@ const AdminPage = () => {
                 {/* flex general fih 2 flex ldakhlo */}
                 <div className="flex flex-col  md:flex-row  items-center  md:justify-center">
                     {/* flex lwl jey b toul */}
-                    <Link className="w-3/4 md:w-1/4" to={"/AddMod"} ><AdminItems choix="add"/></Link>
-                    <Link className="w-3/4 md:w-1/4" to={"/DeletePage"} ><AdminItems choix="delete"/></Link>
+                    <Link className="w-3/4 md:w-1/4" to={"/admin/AddMod"} ><AdminItems choix="add"/></Link>
+                    <Link className="w-3/4 md:w-1/4" to={"/admin/DeletePage"} ><AdminItems choix="delete"/></Link>
                
                 </div>
                 <div className="flex flex-col md:flex-row items-center md:justify-center">
                     {/* flex 2eme jey b toul */}
-                    <Link className="w-3/4 md:w-1/4" to={"/ListEdit"} ><AdminItems choix="edit"/></Link>
-                    <Link className="w-3/4 md:w-1/4" to={"/Upload"} ><AdminItems choix="upload"/></Link>
+                    <Link className="w-3/4 md:w-1/4" to={"/admin/ListEdit"} ><AdminItems choix="edit"/></Link>
+                    <Link className="w-3/4 md:w-1/4" to={"/admin/Upload"} ><AdminItems choix="upload"/></Link>
                     
                     
                 </div>
