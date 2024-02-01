@@ -24,7 +24,7 @@ function App() {
          <Route path="/admin/DeletePage" element={<DeletePage/>}/>
          <Route path="/admin/ListDelete" element={<ModeratorListDelete/>}/>
          <Route path="/admin/AddMod" element={<AddModPage/>}/>
-         <Route path="/Upload" element={<UploadPage/>}/>
+         <Route path="/admin/Upload" element={<UploadPage/>}/>
 
 
        </Routes>

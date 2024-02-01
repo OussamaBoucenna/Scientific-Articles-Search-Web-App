@@ -1,21 +1,30 @@
 import Navbar from "../../../components/NavBar/Navbar";
 import ModeratorItem from "./ModeratorItem";
 import { useState,useEffect } from "react";
+import axios from "axios";
 
 const ModeratorListDelete = () => {
     const [listModerator,setListModerators] = useState(null);
     useEffect(() => {
-        fetch("http://localhost:8000/Moderator")
-        .then(res => (
-            res.json()
-        ))
-        .then(data => {
-           setListModerators(data);
-        }).catch(error => {
-            console.log("erreurrrrrr");
-        }
-
-        );
+        const fetchData = async () => {
+            try {
+                const myKey = localStorage.getItem('token');
+                console.log("the acces token is :",myKey); 
+                const response = await axios.get(
+                    'http://localhost:8080/mods/',
+                    {
+                        headers: {
+                          Authorization: `Bearer ${myKey}`, // Set the Authorization header
+                        },}
+                    )
+                    console.log(response.data); 
+                setListModerators(response.data); 
+            } catch (error) {
+                console.error("Erreur de recuperation des données");
+            }
+            
+        } 
+         fetchData();
     },[listModerator]);
     return ( 
         <div>
@@ -27,7 +36,7 @@ const ModeratorListDelete = () => {
              style={{ overflowY: 'scroll', maxHeight: '440px',  }}>
                {
                listModerator &&  listModerator.map((item,index)=>(
-                      <ModeratorItem nameOfModerator={item.firstName +" " +item.lastName} />
+                      <ModeratorItem nameOfModerator={item.first_name +" " +item.last_name} id={item.id} />
                 )
                 )
                }

@@ -12,7 +12,7 @@ const ModeratorComponent = ({nameOfModerator,id}) => {
         </div>
         <div className="flex-col  space-x-1 md:space-x-4  items-center justify-center">
             {/* this div will containe the two icons  */}    
-             <Link to={`/EditModPage/${uId}`} className="w-6 h-6 md:w-10 md:h-10  inline-flex items-center justify-center" ><TbEditCircle className="w-full h-full text-darkBlue"/></Link>
+             <Link to={`/admin/EditModPage/${uId}`} className="w-6 h-6 md:w-10 md:h-10  inline-flex items-center justify-center" ><TbEditCircle className="w-full h-full text-darkBlue"/></Link>
             <button>
                 <TiDeleteOutline className="w-6 h-6 md:w-10 md:h-10 text-red-500"/>
             </button>

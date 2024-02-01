@@ -2,8 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import Navbar from "../../../components/NavBar/Navbar";
 import FormInput from "./../../../components/inputFormRespo/index"
 import { useEffect, useState } from "react";
-
-
+import axios from 'axios';
 const EditModPage = () => {
     
     const {id} = useParams();
@@ -12,11 +11,6 @@ const EditModPage = () => {
    const [email,setEmail] = useState(""); 
    const [password,setPassword] = useState(""); 
    const [data, setData] = useState({
-    id:'123',
-    firstName: 'test',
-    lastName: 'test',
-    e_mail: 'test@gmail.com',
-    password:'test',
     // ... autres propriétés
   });
    
@@ -33,24 +27,56 @@ const EditModPage = () => {
      setPassword(newPassword) ; 
    }  
    const initialize = () => {
-    setFirstName(data.firstName);
-    setLastName(data.lastName);
-    setEmail(data.e_mail);
-    setPassword(data.password);
+    setFirstName(data.first_name);
+    setLastName(data.last_name);
+    setEmail(data.email);
+    setPassword(data.hashed_password);
   };
-  const handleSaveClick = () => {
+  const handleSaveClick = async () => {
     // on save les donnes dans la base de donnees ici 
+    try {
+      const myKey = localStorage.getItem('token');
+    console.log("the acces token is :",myKey); 
+    const response =  await axios.put(
+      'http://localhost:8080/mods/'+id,
+      {
+        password: password,
+        email: email,
+        first_name: firstName,
+        last_name: lastName,
+        is_active:true , 
+        is_superuser:false , 
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${myKey}`, // Set the Authorization header
+        },}
+    )
+    } catch (error) {
+      console.error("erreur de mise a jour des données")
+    }
   }
   useEffect(() => {
     // lors de l'integration on recupere a partire d'ici 
-    fetch("http://localhost:8000/Moderator/" + id)
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-      })
-      .catch((error) => {
-        console.log("Erreur lors de la récupération des données du modérateur");
-      });
+    const fetchData = async () => {
+      try {
+          const myKey = localStorage.getItem('token');
+          console.log("the acces token is :",myKey); 
+          const response = await axios.get(
+              'http://localhost:8080/mods/'+id,
+              {
+                  headers: {
+                    Authorization: `Bearer ${myKey}`, // Set the Authorization header
+                  },}
+              )
+              console.log(response.data); 
+          setData(response.data); 
+      } catch (error) {
+          console.error("Erreur de recuperation des données");
+      }
+      
+  } 
+   fetchData();
   }, [id]); // Ajoutez id comme dépendance pour recharger les données lorsque id change
 
   useEffect(() => {
@@ -74,7 +100,7 @@ const EditModPage = () => {
                     </div>
                     <div className="flex justify-center">
                 
-                     <Link to={"/ListEdit"}> <button className="border-2 border-red-500 text-red-500 rounded-full px-7 py-2">Cancel</button></Link>    
+                     <Link to={"/admin/ListEdit"}> <button className="border-2 border-red-500 text-red-500 rounded-full px-7 py-2">Cancel</button></Link>    
                     </div>
                   </div>
               </div> 

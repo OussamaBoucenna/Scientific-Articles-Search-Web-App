@@ -38,7 +38,7 @@ const DeletePage = () => {
            { !valueInput  &&  <div className="flex-grow  mt-16 md:mt-10">
                 <div className="flex-col space-y-8 justify-center items-center " >
                     <div className="text-center text-darkBlue text-xl font-semibold md:text-3xl md:font-normal"><p className="mx-4">You can consult the list of moderators</p></div>
-                    <div className=" flex justify-center "><Link to="/ListDelete" className="bg-darkBlue font-semibold rounded-2xl md:rounded-xl text-white text-xl md:text-3xl px-8 py-2">Moderators list</Link></div>
+                    <div className=" flex justify-center "><Link to="/admin/ListDelete" className="bg-darkBlue font-semibold rounded-2xl md:rounded-xl text-white text-xl md:text-3xl px-8 py-2">Moderators list</Link></div>
                 </div>
             </div>}
             {
