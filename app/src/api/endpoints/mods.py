@@ -126,3 +126,15 @@ def update_mod(
         )
     mod = crud_mod.mod.update(db, db_obj=mod, obj_in=mod_in)
     return mod
+@router.delete("/{id}", response_model=schemas.Mod)
+def delete_mod(
+    *,
+    db: Session = Depends(deps.get_db),
+    id: int,
+    current_user: models.User = Depends(deps.get_current_active_user),
+) -> Any:
+    """
+    Delete a mod.
+    """
+    mod = crud_mod.mod.remove(db=db, id=id)
+    return mod

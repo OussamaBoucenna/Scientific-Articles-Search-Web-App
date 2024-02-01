@@ -9,7 +9,7 @@ api_router = FastAPI()
 if settings.BACKEND_CORS_ORIGINS:
     api_router.add_middleware(
         CORSMiddleware,
-        allow_origins=[str(origin) for origin in settings.BACKEND_CORS_ORIGINS],
+        allow_origins=["*"],
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],

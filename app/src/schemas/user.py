@@ -28,6 +28,12 @@ class UserUpdate(UserBase):
     first_name: Optional[str] = None
     last_name: Optional[str] = None
 
+# Properties to receive via API on login
+class UserLogin(UserBase):
+    email: EmailStr
+    password: str
+    is_active: Optional[bool] = True
+
 
 
 class UserInDBBase(UserBase):

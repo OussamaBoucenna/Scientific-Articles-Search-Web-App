@@ -54,6 +54,7 @@ class CRUDMod(CRUDBase[Mod, ModCreate, ModUpdate]):
 
     def is_superuser(self, mod: Mod) -> bool:
         return mod.is_superuser
+    
 
 
 mod = CRUDMod(Mod);print("created")

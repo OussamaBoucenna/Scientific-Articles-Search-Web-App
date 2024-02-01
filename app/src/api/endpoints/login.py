@@ -6,7 +6,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
 from src import models, schemas
-from src.schemas.user import UserCreate
+from src.schemas.user import UserCreate,UserLogin
 from src.api import deps
 from src.core import security
 from src.core.config import settings
@@ -17,7 +17,7 @@ router = APIRouter()
 
 @router.post("/access-token", response_model=schemas.Token)
 def login_access_token(
-    db: Session = Depends(deps.get_db),user_in: UserCreate = Body(None)
+    db: Session = Depends(deps.get_db),user_in: UserLogin = Body(None)
 ) -> Any:
     """
     OAuth2 compatible token login, get an access token for future requests
