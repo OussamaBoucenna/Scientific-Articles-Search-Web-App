@@ -18,6 +18,12 @@ class ModCreate(ModBase):
     first_name: str
     password: str
     last_name: str
+# Properties to receive via API on Login
+
+class ModLogin(ModBase):
+    email: EmailStr
+    password: str
+    is_active: Optional[bool] = True
 
 
 # Properties to receive via API on update
