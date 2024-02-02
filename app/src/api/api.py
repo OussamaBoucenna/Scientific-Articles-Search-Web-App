@@ -2,7 +2,7 @@ from src.api.endpoints import login, users, items,mods
 from fastapi import FastAPI, APIRouter
 from starlette.middleware.cors import CORSMiddleware
 from src.core.config import settings
-
+from fastapi.testclient import TestClient
 api_router = FastAPI()
 
 # Set all CORS enabled origins
