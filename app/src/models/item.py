@@ -21,7 +21,4 @@ class Item(Base):
     nombre_favoris = Column(Integer, index=True)
     references = Column(ARRAY(String))
     date_publication = Column(Date)
-    owner = relationship("User", back_populates="items")    
-
-    
-    
+    owner = relationship("User", back_populates="items")   

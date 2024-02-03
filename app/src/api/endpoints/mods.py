@@ -1,3 +1,4 @@
+import json
 from typing import Any, List
 from src import scraping 
 from fastapi import APIRouter, Body, Depends, HTTPException
@@ -5,11 +6,14 @@ from fastapi.encoders import jsonable_encoder
 from pydantic.networks import EmailStr
 from sqlalchemy.orm import Session
 from src.crud import crud_mod
+from src.crud import crud_item
 from src import models, schemas
 from src.crud import crud_user 
 from src.api import deps
 from src.core.config import settings
 from fastapi import Request
+from src.api.endpoints.items import create_item
+from src.schemas.item  import ItemCreate
 
 
 router = APIRouter()
@@ -158,11 +162,48 @@ class Article(BaseModel):
     url: str
 
 @router.post("/articles")
-async def create_article(article: Article, authorization: str = Header(None)):
+async def create_article(
+    article: Article, 
+    authorization: str = Header(None),
+    *,
+    db: Session = Depends(deps.get_db),
+    current_user: models.User = Depends(deps.get_current_active_user),
+    ):
     article_url = article.url
     if not authorization:
         return {"error": "Unauthorized. Missing token."}
     
-    scraping.scrap_function(article_url)
+    resulta = scraping.scrap_function(article_url)
+    
+    parsed_json = json.loads(resulta[0])
+    title = json.dumps(parsed_json["title"])
+    
+    data = json.loads(resulta[1])
+    authors = data.get('authors', [])
+    try :
+        author_strings = [', '.join([f"{key}: {value}" for key, value in author.items()]) for author in authors]
+    except AttributeError:
+        author_strings = [str(author) for author in authors]
+    
+    keywords_list = [word.strip() for word in resulta[3].split(",")]
+
+    references_string = resulta[5].replace('\n', '')
+    references_list = references_string.split('[\d{1,2}]')
+    Reference_List = [ref.strip() for ref in references_list if ref.strip()]
+
+    abstract = resulta[4].replace('\n','')
+    #text = resulta[6].replace('\n','')
+    item_data = {
+        "title": title,
+        "checked": True,
+        "url": article_url,
+        "description": abstract,
+        "authors": author_strings,
+        "references": Reference_List,
+        "keywords": keywords_list,
+        "text_integral":""
+    }
+    item_create_obj = ItemCreate(**item_data)
+    create_item(db=db,item_in=item_create_obj,current_user=current_user) 
 
     return {"message": "Article received successfully", "url": article_url}

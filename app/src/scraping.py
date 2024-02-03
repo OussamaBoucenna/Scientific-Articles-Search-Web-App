@@ -6,6 +6,8 @@ from datetime import datetime
 import json
 from pdfminer.high_level import extract_text
 from io import BytesIO
+from src import models, schemas
+from src.api.endpoints import items
 
 def parse_json_string(json_str):
     try:
@@ -332,7 +334,16 @@ def scrap_function(pdf_url):
     #print(Text_json_data)
     
     merge_json_file(title,author,institution_json_data,Abstract_json_data,Keywords_json_data,Refernce_json_data,Text_json_data)
-    
+    items =[]
+    items.append(title)
+    items.append(author)
+    items.append(institution_json_data)
+    items.append(Keywords)
+    items.append(Abstract)
+    items.append(Reference)
+    items.append(Text_integral)
+
+    return items
 
 pdf_url1 = 'http://www.philippe-fournier-viger.com/survey_sequential_pattern_mining.pdf'
 pdf_url2 = 'https://www.philippe-fournier-viger.com/2019_TKDE_Average_utility.pdf'
