@@ -14,6 +14,7 @@ class ItemCreate(ItemBase):
     title: str
     checked: bool
     url: str
+    text_integral: str
     description: str
     authors: List[str]
     references: List[str]

@@ -18,6 +18,7 @@ class Item(Base):
     authors = Column(ARRAY(String))
     keywords = Column(ARRAY(String))
     url = Column(String, index=True)
+    text_integral = Column(String, index=True)
     nombre_favoris = Column(Integer, index=True)
     references = Column(ARRAY(String))
     date_publication = Column(Date)
