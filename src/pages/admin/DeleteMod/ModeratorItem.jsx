@@ -1,9 +1,23 @@
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 const ModeratorItem = ({nameOfModerator,id}) => {
      
-   const handleDeleteACtion = () =>{
+   const handleDeleteACtion = async () =>{
     // ici il faut supprimer ce moderateur de la base de donner 
+      try { 
+         const myKey = localStorage.getItem('token'); 
+         console.log("access token is ",myKey)
+        const response  = await axios.delete(
+            'http://localhost:8080/mods/'+id,
+            {
+                headers: {
+                  Authorization: `Bearer ${myKey}`, // Set the Authorization header
+                },}
+        )
+      } catch (error) {
+        console.error("erreur lors de la suppression du moderateur ")
+      }
    }
     return (  
     

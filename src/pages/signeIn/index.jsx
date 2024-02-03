@@ -2,8 +2,10 @@ import { useState } from 'react';
 import axios from 'axios';
 import './in.css';
 import FormInput from './../../components/inputForm';
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
+    const navigate = useNavigate(); 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -20,26 +22,89 @@ const SignIn = () => {
 
         try {
             const response = await axios.post(
-                'http://localhost:8080/login/access-token',
+                'http://localhost:8080/login/access-token-user',
                 {
                     email:email ,
                     is_active: true,
-                    is_superuser: true,
-                    first_name: "Aniss",
-                    last_name: "benstaali",
-                    password: "adminmeryoul"
+                    is_superuser: false,
+                    first_name: "string",
+                    last_name: "string",
+                    password: password
                 }
-            );
-
+            );      
+             // Store the token in local storage or session storage
             console.log('Received token:', response.data.access_token);
             localStorage.setItem('token', response.data.access_token);
-
-            // Store the token in local storage or session storage
-
-
+            try {
+                const response_test = await axios.post(
+                    'http://localhost:8080/login/test-token-user',
+                    {},
+                    {
+                        headers: {
+                            Authorization: `Bearer ${localStorage.getItem('token')}`, // Set the Authorization header
+                          },
+                    }
+                 )
+                 if (response_test.status === 200 ){
+                    console.log("it's user")
+                    console.log('the user',response_test.data);
+                    console.log('ID of users is : ' ,response_test.data.id)
+                    if (response_test.data.is_superuser===true){
+                        navigate('/admin');
+                        
+                    }else {
+                        // ici il faut pusher la page de l'utilisateur avec son id comme parametre ok ?
+                        navigate('/admin/addMod');
+                    }
+                  }
+           
+             } catch (error) {
+                console.log("erreur lors de la verification du token :",error)
+             }
         } catch (error) {
             console.error('Error signing in:', error);
         }
+        try {
+            const response = await axios.post(
+                'http://localhost:8080/login/access-token-mod',
+                {
+                    email:email ,
+                    is_active: true,
+                    is_superuser: false,
+                    first_name: "string",
+                    last_name: "string",
+                    password: password
+                }
+            );      
+             // Store the token in local storage or session storage
+            console.log('Received token:', response.data.access_token);
+            localStorage.setItem('token', response.data.access_token);
+            try {
+                const response_test = await axios.post(
+                    'http://localhost:8080/login/test-token-mod',
+                    {}, 
+                    {
+                        headers: {
+                            Authorization: `Bearer ${localStorage.getItem('token')}`, // Set the Authorization header
+                          },
+                    }
+                 )
+                 if (response_test.status === 200 ){
+                    console.log("it's mod")
+                    console.log('the mod',response_test.data);
+                    console.log('ID of mod is : ' ,response_test.data.id);
+                    // ICI IL FAUT SPECIFIER LA PAGE DE MODERATEUR DANS APP.JS DANS ROUTER/ROUTES
+                    navigate("/moderator");
+                  }
+           
+             } catch (error) {
+                console.log("erreur lors de la verification du token :",error)
+             }
+            
+        } catch (error) {
+            
+        }
+       
     };
 
     return (

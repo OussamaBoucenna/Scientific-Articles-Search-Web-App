@@ -9,7 +9,7 @@ const EditModPage = () => {
     const [firstName,setFirstName] = useState("");
    const [lastName,setLastName] = useState(""); 
    const [email,setEmail] = useState(""); 
-   const [password,setPassword] = useState(""); 
+   const [paassword,setPassword] = useState(""); 
    const [data, setData] = useState({
     // ... autres propriétés
   });
@@ -39,13 +39,13 @@ const EditModPage = () => {
     console.log("the acces token is :",myKey); 
     const response =  await axios.put(
       'http://localhost:8080/mods/'+id,
-      {
-        password: password,
+      { 
         email: email,
+        is_active:true, 
+        is_superuser:false ,
         first_name: firstName,
         last_name: lastName,
-        is_active:true , 
-        is_superuser:false , 
+        paassword : "hahaha"
       },
       {
         headers: {
@@ -93,7 +93,7 @@ const EditModPage = () => {
                   <FormInput type="text" label="First name" icon= {null} valInput={firstName} onChange={onFirstNameChange} /> 
                   <FormInput type="text" label="Last name" icon={null} valInput={lastName} onChange={onLastNameChange}/> 
                   <FormInput type="email" label="E-mail" icon="email" valInput={email} onChange={onEmailChange}/>
-                  <FormInput type="password" label="Password" icon="password" valInput={password} onChange={onPasswordChange}/>
+                  <FormInput type="password" label="Password" icon="password" valInput={paassword} onChange={onPasswordChange}/>
                   <div className="space-y-7 md:space-y-0 md:flex md:justify-evenly  font-bold">
                     <div className="flex justify-center">
                         <button className="border-2 border-green-400 text-green-400  rounded-full px-7 py-2" onClick={handleSaveClick}>&nbsp;Save&nbsp;</button>

@@ -27,7 +27,7 @@ const EditListPage = () => {
             
         } 
          fetchData();
-    },[]);
+    },[listModerator]);
     return ( 
         <div>
             <Navbar/>
