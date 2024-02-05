@@ -36,7 +36,7 @@ const ModPage = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar typeId="mod"/>
 
       <div className="bg-myBlue pt-4 pb-10 md:px-auto md:pt-8 md:py-16 md:text-xl flex-col space-y-4 justify-center items-center text-darkBlue font-bold">
         <div className="flex-col justify-center items-center">

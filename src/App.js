@@ -9,13 +9,19 @@ import AddModPage from './pages/admin/AddMod/AddMod';
 import UploadPage from './pages/admin/Upload/UploadPage';
 import SignIn from './pages/signeIn';
 import ModPage from './pages/moderator/ModPage';
-import ArticleComponents from './pages/moderator/ArticleComponents';
 import ModDetailsPage from './pages/moderator/ModDetailsPage';
+import Profile from './pages/User/Profile';
+import ArticleDetails from './pages/User/ArticleDetails/ArticleDetails';
+import SearchPage from './pages/User/SearchPage';
+import Favorites from './pages/User/Favorites';
 
 function App() {
   return (
      <Router>
       <Routes>
+         {/* signeIn and signeUp  */}
+         <Route path="/signIn" element ={<SignIn/>} />
+        
           {/* admin route  */}
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/admin/AddMod" element={<AddModPage />} />
@@ -24,14 +30,15 @@ function App() {
           <Route path="/admin/Upload" element={<UploadPage />} />
           <Route path="/admin/EditModPage/:id" element={<EditModPage/>}/>
           <Route path="/admin/ListDelete" element={<ModeratorListDelete/>}/>
-           {/* signeIn and signeUp  */}
-         <Route path="/signIn" element ={<SignIn/>} />
-
-         {/* <Route path="/admin/AddMod" element={<AddModPage/>}/> */}
          {/* moderator route  */}
          <Route path="/moderator" element={<ModPage/>}/>
          <Route path="/moderator/ArticleComponents/:id" element={<ModDetailsPage/>} />
          <Route path="/" element={<Navigate to="/signIn" />} />
+         {/* user route  */}
+         <Route path="/user" element={<Profile/>}/>
+         <Route path="/user/ArticleDetails/:id" element={<ArticleDetails/>} />
+         <Route path="/user/SearchPage" element={<SearchPage/>} />
+         <Route path="/user/favorites" element={<Favorites/>} />
          
       </Routes>
      </Router>

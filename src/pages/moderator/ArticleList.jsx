@@ -18,7 +18,6 @@ const ArticleList = () => {
     <div>
       {articles.map((article, index) => (
         <div key={index} className={index !== articles.length - 1 ? 'mb-6' : ''}>
-         
          <ArticleComponents id={article.id} titre={article.titre} auteurs={article.auteurs} />  
         </div>
       ))}

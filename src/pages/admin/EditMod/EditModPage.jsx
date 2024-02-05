@@ -84,7 +84,7 @@ const EditModPage = () => {
   }, [data]); // Ajoutez data comme dépendance pour recharger les données lorsque data change
     return ( 
         <div>  
-                <Navbar/>
+                <Navbar typeId="admin"/>
             <div className="flex-col justify-center items-center">
                 <div className="text-center my-12 md:my-14"><p className="font-medium text-xl text-darkBlue">Edit the moderator’s info</p></div>
                 <div className="flex justify-center items-center ">

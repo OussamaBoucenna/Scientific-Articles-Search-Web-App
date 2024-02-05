@@ -26,7 +26,7 @@ const DeletePage = () => {
 }
     return ( 
         <div className="flex-col ">
-            <Navbar/>
+            <Navbar typeId="admin"/>
             <div className="relative bg-myBlue pt-16 pb-16 md:px-auto md:pt-16 md:pb-24  flex-col space-y-4 justify-center items-center text-darkBlue font-bold">
                 <div className="text-center font-bold text-3xl"><p>Delete Moderator</p></div>
                 <div className="absolute bottom-[-30px] bg-myBlue w-full h-8"></div>

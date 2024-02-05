@@ -54,7 +54,7 @@ const SignIn = () => {
                         
                     }else {
                         // ici il faut pusher la page de l'utilisateur avec son id comme parametre ok ?
-                        navigate('/admin/addMod');
+                        navigate('/user');
                     }
                   }
            

@@ -30,7 +30,7 @@ const EditListPage = () => {
     },[listModerator]);
     return ( 
         <div>
-            <Navbar/>
+            <Navbar typeId="admin"/>
              <div className="text-center mt-12 mb-6 md:mt-20 md:mb-12">
                 <p className="text-darkBlue font-semibold text-xl md:text-2xl">Moderators list</p>
              </div>

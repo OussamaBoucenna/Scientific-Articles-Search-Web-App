@@ -11,7 +11,7 @@ const AdminPage = () => {
 
     return ( 
         <main>
-            <Navbar/>
+           <Navbar typeId="admin"/>
             <div className="flex flex-col ">
                 <div className="flex flex-col md:flex-row items-center md:justify-center">
                     <Link className="w-3/4 md:w-1/4" to={"/admin/addMod"}><AdminItems choix="add"/></Link>

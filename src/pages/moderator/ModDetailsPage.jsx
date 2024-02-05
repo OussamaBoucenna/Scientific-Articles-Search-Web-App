@@ -16,7 +16,7 @@ const ModDetailsPage = () => {
 
   return (
 <div >
-<Navbar/>
+<Navbar typeId="mod"/>
  <div className='flex flex-col px-4 py-4'>
   <div >
 <b className='text-darkBlue font-bold p-4'> Title :</b> 
