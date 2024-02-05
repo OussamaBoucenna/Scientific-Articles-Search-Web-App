@@ -75,3 +75,4 @@ pydantic-settings==2.1.0
 pdfminer.six
 PyMuPDF==1.23.21 
 PyMuPDFb==1.23.9
+elasticsearch

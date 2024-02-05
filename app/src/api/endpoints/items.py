@@ -5,6 +5,9 @@ from sqlalchemy.orm import Session
 
 from src import crud, models, schemas
 from src.api import deps
+from elasticsearch import Elasticsearch
+from elasticsearch.helpers import scan
+
 
 router = APIRouter()
 
@@ -98,3 +101,18 @@ def delete_item(
     item = crud.item.remove(db=db, id=id)
     return item
 
+
+
+
+@router.get("/articl",response_model=schemas.Item)
+async def read_items(
+    
+    db: Session = Depends(deps.get_db),
+    current_user: models.User = Depends(deps.get_current_active_user),
+) -> Any:
+   
+    
+    print("read items used ")
+    
+    
+    return 0

@@ -41,7 +41,7 @@ def extract_doc_from_pdf_url(pdf_url):
 
 def get_source_id(pdf_url):
     headers = {
-    'x-api-key': 'sec_kDoryGjsAgyUydpsfh47BDSnPzBl71Wy',
+    'x-api-key': 'sec_xQK7iIGc7bS7uU4NHhvgzwG8OOb9zscJ',
     'Content-Type': 'application/json'
     }
 
@@ -274,7 +274,7 @@ def merge_json_file (title,author,institution,abstract,keywords,refernce,text):
     # Convert the merged dictionary back to JSON
     merged_json = json.dumps(merged_dict, indent=2)
 
-    json_file_path = "./article.json"
+    json_file_path = "Scientific-Articles-Search-Web-App\app\src\article.json"
     
     # Write the merged dictionary to a JSON file
     with open(json_file_path, 'w', encoding='utf-8') as output_file:
@@ -346,6 +346,6 @@ def scrap_function(pdf_url):
     return items
 
 pdf_url1 = 'http://www.philippe-fournier-viger.com/survey_sequential_pattern_mining.pdf'
-pdf_url2 = 'https://www.philippe-fournier-viger.com/2019_TKDE_Average_utility.pdf'
+pdf_url2 = 'http://www.philippe-fournier-viger.com/2019_TKDE_Average_utility.pdf'
 
 #scrap_function(pdf_url2)

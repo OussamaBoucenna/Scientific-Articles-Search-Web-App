@@ -4,6 +4,7 @@ from src import scraping
 from fastapi import APIRouter, Body, Depends, HTTPException
 from fastapi.encoders import jsonable_encoder
 from pydantic.networks import EmailStr
+ 
 from sqlalchemy.orm import Session
 from src.crud import crud_mod
 from src.crud import crud_item
@@ -14,6 +15,7 @@ from src.core.config import settings
 from fastapi import Request
 from src.api.endpoints.items import create_item
 from src.schemas.item  import ItemCreate
+from elasticsearch import Elasticsearch
 
 
 router = APIRouter()
@@ -173,37 +175,48 @@ async def create_article(
     if not authorization:
         return {"error": "Unauthorized. Missing token."}
     
+
     resulta = scraping.scrap_function(article_url)
-    
-    parsed_json = json.loads(resulta[0])
-    title = json.dumps(parsed_json["title"])
-    
-    data = json.loads(resulta[1])
-    authors = data.get('authors', [])
-    try :
-        author_strings = [', '.join([f"{key}: {value}" for key, value in author.items()]) for author in authors]
-    except AttributeError:
-        author_strings = [str(author) for author in authors]
-    
-    keywords_list = [word.strip() for word in resulta[3].split(",")]
 
-    references_string = resulta[5].replace('\n', '')
-    references_list = references_string.split('[\d{1,2}]')
-    Reference_List = [ref.strip() for ref in references_list if ref.strip()]
+    with open('Scientific-Articles-Search-Web-App\app\src\article.json') as file:
+        doc=json.load(file)
+    
+    # parsed_json = json.loads(resulta[0])
+    # title = json.dumps(parsed_json["title"])
+    
+    # data = json.loads(resulta[1])
+    # authors = data.get('authors', [])
+    # try :
+    #     author_strings = [', '.join([f"{key}: {value}" for key, value in author.items()]) for author in authors]
+    # except AttributeError:
+    #     author_strings = [str(author) for author in authors]
+    
+    # keywords_list = [word.strip() for word in resulta[3].split(",")]
 
-    abstract = resulta[4].replace('\n','')
-    #text = resulta[6].replace('\n','')
-    item_data = {
-        "title": title,
-        "checked": True,
-        "url": article_url,
-        "description": abstract,
-        "authors": author_strings,
-        "references": Reference_List,
-        "keywords": keywords_list,
-        "text_integral":""
-    }
-    item_create_obj = ItemCreate(**item_data)
-    create_item(db=db,item_in=item_create_obj,current_user=current_user) 
+    # references_string = resulta[5].replace('\n', '')
+    # references_list = references_string.split('[\d{1,2}]')
+    # Reference_List = [ref.strip() for ref in references_list if ref.strip()]
+
+    # abstract = resulta[4].replace('\n','')
+    # #text = resulta[6].replace('\n','')
+    # item_data = {
+    #     "title": title,
+    #     "checked": True,
+    #     "url": article_url,
+    #     "description": abstract,
+    #     "authors": author_strings,
+    #     "references": Reference_List,
+    #     "keywords": keywords_list,
+    #     "text_integral":""
+    # }
+    # item_create_obj = ItemCreate(**item_data)
+    # create_item(db=db,item_in=item_create_obj,current_user=current_user) 
+    
+    es = Elasticsearch(["http://elasticsearch:9200"])
+    es.info()
+    es.index(index="articles",document=doc)
+    
 
     return {"message": "Article received successfully", "url": article_url}
+
+
