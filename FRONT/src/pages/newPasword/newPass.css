@@ -1,0 +1,178 @@
+@media screen and (min-width :769px) {
+
+    .main-new {
+      background: url(./../../assets/images/Sign\ up.jpg);
+      background-position: center;
+      background-size: cover ;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: row;
+  }
+  .left-section-new{
+      padding: 15px;
+      flex-grow: 1.5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      align-self: stretch;
+      position: relative;
+  
+  } .join-us-new{
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  .join-us-new p{
+     font-size: 2rem;
+     color: white;
+  }
+  .right-section-new{
+      border-radius: 25px 0px 0px 25px;
+      background: #D4F2F4;
+      flex-grow: 3;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      max-height: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-direction: column;
+      
+      
+  }
+    
+  .flex-container-new{
+    margin-top: 20%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+    grid-gap:20px 10px;
+    align-items: center;
+    
+  }  
+    
+    .item1-new{
+      width: 100%;
+      max-width: 450px;
+    }
+    .item2-new{
+        width: 100%;
+        max-width: 450px;
+    }
+    .item3-new{
+     
+     
+    }
+   
+    .item4-new{
+      text-align: center;
+    }
+    .item4-new{
+        
+      width: 20%;
+      padding: 8px 10px;
+      background-color: #04445F; /* Couleur de fond du bouton */
+      color: white; /* Couleur du texte du bouton */
+      border: 10px; 
+      border-radius: 5px; /* Ajouter des coins arrondis */
+      font-size: 16px; /* Taille de la police */
+      cursor: pointer; /* Ajouter un pointeur au survol du bouton */
+      transition: background-color 0.3s ease; /* Ajouter une transition sur la couleur de fond */
+  }
+  
+  .item4-new button:hover {
+      background-color: #189AB4; /* Changement de couleur de fond au survol */
+  }
+   }
+  
+  
+   /* Design pour Mobile */
+   @media screen and (max-width : 768px) {
+    .main-new {
+      background: url(./../../assets/images/Sign\ up.jpg);
+      background-position: center;
+      background-size: cover ;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+  }  
+  /* LA permier section */
+   .left-section-new{
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: stretch;
+   }
+   .join-us-new p{
+      font-size: 1.4rem;
+      color: white;
+   }
+   .right-section-new{
+    display: flex;
+   
+    border-radius: 25px 25px 0px 0px;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    background: #D4F2F4;
+    min-width: 100%;
+    flex-grow: 4;
+  }  
+  
+  .flex-container-new{
+    margin-top: 20%;
+    display: flex; 
+    flex-direction: column;
+    margin-bottom: 100px;
+    grid-gap: 20px 0;
+    align-items: center;
+    justify-content: center;
+    
+  }  
+    
+    .item1-new{
+      width: 100%;
+      max-width: 280px;
+    }
+    .item2-new{
+        width: 100%;
+        max-width: 280px;
+    }
+    .item3-new{
+     
+     text-align: center;
+    }
+   
+    .item4-new{
+      text-align: center;
+      background: red;
+    }
+    .item4-new{
+        
+      width: 20%;
+      padding: 8px 10px;
+      background-color: #04445F; /* Couleur de fond du bouton */
+      color: white; /* Couleur du texte du bouton */
+      border: 10px; 
+      border-radius: 5px; /* Ajouter des coins arrondis */
+      font-size: 16px; /* Taille de la police */
+      cursor: pointer; /* Ajouter un pointeur au survol du bouton */
+      transition: background-color 0.3s ease; /* Ajouter une transition sur la couleur de fond */
+  }
+  
+  .item4-new button:hover {
+      background-color: #189AB4; /* Changement de couleur de fond au survol */
+  }
+  
+   }
+  
+    
+   
+    
+    
+    
+    
+    

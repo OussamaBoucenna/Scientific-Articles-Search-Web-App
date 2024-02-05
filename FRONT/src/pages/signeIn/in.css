@@ -1,0 +1,228 @@
+ @media screen and (min-width :769px) {
+
+  .main-in {
+    background: url(./../../assets/images/Sign\ up.jpg);
+    background-position: center;
+    background-size: cover ;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.left-section-in{
+    padding: 15px;
+    flex-grow: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    position: relative;
+
+} .join-us-in{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.join-us-in p{
+   font-size: 2rem;
+   color: white;
+}
+.right-section-in{
+    border-radius: 25px 0px 0px 25px;
+    background: #D4F2F4;
+    flex-grow: 3;
+    display: flex;
+    max-height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-direction: column;
+    
+    
+}
+.right-section-in h1{
+    margin-left: 17%;
+    margin-top: 10%;
+    font-size: 3rem;
+    color: #04445F;
+}
+  
+.grid-container-in {
+  margin-left: 17%;
+  margin-right: 17%;
+  margin-top: 5%;
+  display: grid; 
+  margin-bottom: 100px;
+  grid-template-columns: repeat(1, 1fr); /* Three equal-width columns */
+  grid-gap: 15% 4%;
+  align-items: center;
+  justify-content: center;
+  
+}  
+  .grid-in{ 
+    width: 100%;
+    max-width: 400px;
+    
+  }
+  .item1-in{
+    grid-row-start: 3;
+  }
+  .item2-in{
+      grid-row-start: 4;
+  }
+  .item3-in{
+    position: relative;
+    grid-row-start: 5;
+   
+   
+  }
+  .item3-in a{
+    color: #04445F;
+    position: absolute;
+    top: -20px;
+    right: 0px;
+  }
+  .item4-in{
+    grid-row-start: 6 ; 
+    text-align: center;
+  }
+  .item4-in button {
+    width: 40%;
+    padding: 8px 10px;
+    background-color: #04445F; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    border: 10px; 
+    border-radius: 5px; /* Ajouter des coins arrondis */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer; /* Ajouter un pointeur au survol du bouton */
+    transition: background-color 0.3s ease; /* Ajouter une transition sur la couleur de fond */
+}
+
+.item4-in button:hover {
+    background-color: #189AB4; /* Changement de couleur de fond au survol */
+}
+  .question-in{
+    grid-row-start: 7 ; 
+    text-align: center;
+  }
+  .question-in p{
+    color: #189AB4;
+    font-size: 1.3rem;
+}
+.question-in p a{
+  color: #04445F;
+}
+ }
+
+
+ /* Design pour Mobile */
+ @media screen and (max-width : 768px) {
+  .main-in {
+    background: url(./../../assets/images/Sign\ up.jpg);
+    background-position: center;
+    background-size: cover ;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}  
+/* LA permier section */
+ .left-section-in{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+ }
+ .join-us-in p{
+    font-size: 1.4rem;
+    color: white;
+ }
+ .right-section-in{
+  border-radius: 25px 25px 0px 0px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  background: #D4F2F4;
+  min-width: 100%;
+  flex-grow: 4;
+}  
+.right-section-in h1{
+  font-size: 1.8rem;
+  color: #04445F;
+  margin-left: 17%;
+  margin-top: 10%;
+  
+}  
+.grid-container-in {
+  margin: 0 20%;
+  margin-top: 5%;
+  display: grid; 
+  margin-bottom: 100px;
+  grid-template-columns: repeat(1, 1fr); /* Three equal-width columns */
+  grid-gap: 15% 4%;
+  align-items: center;
+  justify-content: center;
+  
+}  
+.grid-in{ 
+  width: 100%;
+  max-width: 400px;
+  
+}
+.item1-in{
+  grid-row-start: 3;
+}
+.item2-in{
+    grid-row-start: 4;
+}
+.item3-in{
+  position: relative;
+  grid-row-start: 5;
+  
+ 
+}
+.item3-in a{
+  color: #04445F;
+  position: absolute;
+  top: -20px;
+  right: 0px;
+}
+.item4-in{
+  grid-row-start: 6 ; 
+  text-align: center;
+}
+.item4-in button {
+  width: 40%;
+  padding: 8px 10px;
+  background-color: #04445F; /* Couleur de fond du bouton */
+  color: white; /* Couleur du texte du bouton */
+  border: 10px; 
+  border-radius: 5px; /* Ajouter des coins arrondis */
+  font-size: 16px; /* Taille de la police */
+  cursor: pointer; /* Ajouter un pointeur au survol du bouton */
+  transition: background-color 0.3s ease; /* Ajouter une transition sur la couleur de fond */
+}
+
+.item4-in button:hover {
+  background-color: #189AB4; /* Changement de couleur de fond au survol */
+}
+.question-in{
+  grid-row-start: 7 ; 
+  text-align: center;
+}
+.question-in p{
+  color: #189AB4;
+  font-size: 1.3rem;
+}
+.question-in p a{
+color: #04445F;
+}
+
+ }
+
+  
+ 
+  
+  
+  
+  
+  
